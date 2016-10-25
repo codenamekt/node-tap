@@ -13,6 +13,7 @@ test('compile-to-js require hook', function (t) {
     t.plan(6)
 
     function verifyOutput (err, stdout, stderr) {
+      console.error(stdout)
       t.ok(!!err, 'Should have failed to run')
       t.match(stdout, /file: .*[\\\/]using-require-hook\.faux/,
         'error happened in the *.faux file')
